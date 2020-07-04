@@ -1,0 +1,5 @@
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\Entity\bin\Debug\Entity.dll
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\Entity\bin\Debug\Entity.pdb
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\Entity\obj\Debug\Entity.dll
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\Entity\obj\Debug\Entity.pdb

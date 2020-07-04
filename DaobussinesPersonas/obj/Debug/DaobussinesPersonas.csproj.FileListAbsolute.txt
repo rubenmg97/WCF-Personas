@@ -1,0 +1,7 @@
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\DaobussinesPersonas\bin\Debug\DaobussinesPersonas.dll
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\DaobussinesPersonas\bin\Debug\DaobussinesPersonas.pdb
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\DaobussinesPersonas\bin\Debug\Entity.dll
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\DaobussinesPersonas\bin\Debug\Entity.pdb
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\DaobussinesPersonas\obj\Debug\DaobussinesPersonas.csprojResolveAssemblyReference.cache
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\DaobussinesPersonas\obj\Debug\DaobussinesPersonas.dll
+C:\Users\Developer6\Desktop\Ruben Mancilla\SolWcfPersonas\DaobussinesPersonas\obj\Debug\DaobussinesPersonas.pdb
