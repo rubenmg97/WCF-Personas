@@ -1,0 +1,86 @@
+use GeneracionSeis
+
+create table Persona
+(
+Id int Primary Key Identity,
+Nombre varchar(50) not null,
+Paterno varchar(50) not null,
+Materno varchar(50)  not null,
+FechaNacimiento datetime not null,
+FechaAlta datetime not null,
+Edad int not null,
+Sexo bit not null,
+)
+
+go
+
+create proc spObtenerPersonas
+as 
+begin
+Select Persona.Id, Persona.Nombre, Persona.Paterno, Persona.Materno, Persona.FechaNacimiento, Persona.FechaAlta, Persona.Edad, Persona.Sexo from Persona
+end
+
+go
+
+create proc spObtenerPersonasId (@Id int)
+as 
+begin
+Select Persona.Id, Persona.Nombre, Persona.Paterno, Persona.Materno, Persona.FechaNacimiento, Persona.FechaAlta, Persona.Edad, Persona.Sexo from Persona where Id=@Id
+end
+
+go
+
+create proc spObtenerPersonasNombre (@Nombre varchar(50))
+as 
+begin
+Select Persona.Id, Persona.Nombre, Persona.Paterno, Persona.Materno, Persona.FechaNacimiento, Persona.FechaAlta, Persona.Edad, Persona.Sexo from Persona where Nombre like '%'+@Nombre+'%'
+end
+
+go
+
+create proc spObtenerPersonasNombreCompleto (@Nombre varchar(50),@Paterno varchar(50),@Materno varchar(50))
+as 
+begin
+Select Persona.Id, Persona.Nombre, Persona.Paterno, Persona.Materno, Persona.FechaNacimiento, Persona.FechaAlta, Persona.Edad, Persona.Sexo from Persona where Nombre like '%'+@Nombre+'%' or Paterno like '%'+@Nombre+'%' or Materno like '%'+@Nombre+'%' 
+end
+
+go
+
+create proc spBorrarPersona (@Id int)
+as
+begin
+Delete Persona from Persona  where Id=@Id 
+end
+
+go
+
+create proc spEditarPersona
+(@Id int ,
+@Nombre varchar(50),
+@Paterno varchar(50),
+@Materno varchar(50),
+@FechaNacimiento datetime,
+@Sexo bit
+)
+as 
+begin
+update persona set Nombre=@Nombre,Paterno=@Paterno,Materno=@Materno,FechaNacimiento=@FechaNacimiento,Edad=(Select DATEDIFF(YEAR,@FechaNacimiento,GETDATE())-(CASE WHEN DATEADD(YY,DATEDIFF(YEAR,@FechaNacimiento,GETDATE()),@FechaNacimiento)>GETDATE() THEN   1 ELSE 0 END)),Sexo=@Sexo where Id=@Id
+end
+
+go
+
+
+create proc spCrearPersona 
+(
+ @Nombre varchar(50),
+ @Paterno varchar(50),
+ @Materno varchar(50),
+ @Sexo bit,
+ @FechaNacimiento datetime
+)
+as
+begin 
+Insert into Persona values (@Nombre,@Paterno,@Materno,@FechaNacimiento,GETDATE(),(Select DATEDIFF(YEAR,@FechaNacimiento,GETDATE())-(CASE WHEN DATEADD(YY,DATEDIFF(YEAR,@FechaNacimiento,GETDATE()),@FechaNacimiento)>GETDATE() THEN   1 ELSE 0 END)),@Sexo)
+end
+
+go
